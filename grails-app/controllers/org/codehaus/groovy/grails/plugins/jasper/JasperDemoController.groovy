@@ -29,6 +29,11 @@ class JasperDemoController {
     // There is nothing to administer, so just show the demo
     redirect(action: 'demo')
   }
+  
+  def index() {
+    // Suggestion for the bug that I opened in Jira (GPJASPER-76) to solve the absent action and error message on JasperDemoController
+    redirect(action: 'demo')
+  }
 
   def demo() {
     // This "people" object in this data model is only for displaying the data in a table on the Demo page (demo.gsp) next to the
