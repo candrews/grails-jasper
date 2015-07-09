@@ -12,6 +12,7 @@ target-eclipse/
 target
 *.log
 *.zip
+*.sha1
 plugin.xml
 /docs/
 .DS_Store

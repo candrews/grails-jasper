@@ -16,35 +16,27 @@
 
  package org.codehaus.groovy.grails.plugins.jasper
 
- import groovy.sql.Sql
-
-import java.lang.reflect.Field
-import java.sql.Connection
-
-import net.sf.jasperreports.engine.JRDataSource
-import net.sf.jasperreports.engine.JRExporter
-import net.sf.jasperreports.engine.JRExporterParameter
-import net.sf.jasperreports.engine.JasperCompileManager
-import net.sf.jasperreports.engine.JasperFillManager
-import net.sf.jasperreports.engine.JasperPrint
+import groovy.sql.Sql
+import net.sf.jasperreports.engine.*
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import net.sf.jasperreports.engine.export.JRHtmlExporterParameter
 import net.sf.jasperreports.engine.export.JRTextExporterParameter
 import net.sf.jasperreports.engine.export.JRXlsExporterParameter
 import net.sf.jasperreports.engine.util.JRProperties
-
 import org.springframework.core.io.Resource
-import org.springframework.transaction.annotation.Transactional
+
+import java.lang.reflect.Field
+import java.sql.Connection
 
 /**
  * Generates Jasper reports. Call one of the three generateReport methods to
  * get a ByteArrayOutputStream with the generated report.
  * @author Sebastian Hohns
  */
-@Transactional(readOnly = true)
 class JasperService {
 
     def dataSource
+    def transactional = false
 
     static final boolean FORCE_TEMP_FOLDER = false
 
