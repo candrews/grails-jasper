@@ -89,8 +89,7 @@ class JasperReportDef implements Serializable {
 
   /**
    * Looks for the report file in the filesystem. The file extension can either be .jasper
-   * or .jrxml. if japser.compile.files is set to true the report will be compiled and stored
-   * in the same folder as the jrxml file.
+   * or .jrxml.
    * @return the report as Resource
    * @throws Exception , report file not found
    */
