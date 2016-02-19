@@ -18,6 +18,7 @@ package org.codehaus.groovy.grails.plugins.jasper
 
 import net.sf.jasperreports.engine.JRDataSource
 import net.sf.jasperreports.engine.JasperPrint
+import net.sf.jasperreports.engine.JREmptyDataSource
 
 import org.apache.commons.io.FilenameUtils
 import grails.util.Holders
@@ -59,7 +60,7 @@ class JasperReportDef implements Serializable {
    * <p>
    * This is an implementation of {@link JRDataSource}.
    */
-  JRDataSource dataSource
+  JRDataSource dataSource = new JREmptyDataSource()
 
   /**
    * The target file format.
