@@ -27,11 +27,11 @@ grails.project.dependency.resolution = {
                     'xercesImpl','xmlParserAPIs','spring-core','bsh', 'spring-beans', 'jaxen', 'barcode4j','batik-svg-dom','batik-xml','batik-awt-util','batik-dom',
                     'batik-css','batik-gvt','batik-script', 'batik-svggen','batik-util','batik-bridge','persistence-api','jdtcore','bcmail-jdk16','bcprov-jdk16','bctsp-jdk16',
                     'bcmail-jdk14','bcprov-jdk14','bctsp-jdk14','xmlbeans', 'olap4j','lucene-core', 'lucene-analyzers-common', 'lucene-queryparser', 'xml-apis','bouncycastle:bcmail-jdk14', "bouncycastle:bcprov-jdk14", "org.bouncycastle:bctsp-jdk14", "org.bouncycastle:bcprov-jdk14",
-                    //'castor-xml', 'ecj', 'icu4j'
-                    'commons-beanutils', 'commons-digester'
+                    'castor-xml', 'ecj', 'icu4j'
+                    //'commons-beanutils', 'commons-digester'
         }
 
-        compile('org.apache.poi:poi:3.10-FINAL')
+        //compile('org.apache.poi:poi:3.10-FINAL')
     }
 
     plugins {
