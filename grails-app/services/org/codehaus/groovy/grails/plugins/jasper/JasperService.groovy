@@ -31,7 +31,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import net.sf.jasperreports.engine.export.JRHtmlExporterParameter
 import net.sf.jasperreports.engine.export.JRTextExporterParameter
 import net.sf.jasperreports.engine.export.JRXlsExporterParameter
-import net.sf.jasperreports.engine.util.JRProperties
+//import net.sf.jasperreports.engine.util.JRProperties
 
 import org.springframework.core.io.Resource
 import org.springframework.transaction.annotation.Transactional
@@ -163,7 +163,7 @@ class JasperService {
 
             // This is the current official means for setting the temp folder for jasper reports to use when compiling
             // reports on the fly, but it doesn't work
-            JRProperties.setProperty(JRProperties.COMPILER_TEMP_DIR, tempFolder.getAbsolutePath())
+//            JRProperties.setProperty(JRProperties.COMPILER_TEMP_DIR, tempFolder.getAbsolutePath())
 
             // This is a deprecated means for setting the temp folder that supposedly still works (still in the Jasper
             // Reports source code trunk as of 14-Aug-2008, and, in fact, takes precedence over the official method);
