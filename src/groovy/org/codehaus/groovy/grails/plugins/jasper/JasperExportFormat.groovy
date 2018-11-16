@@ -16,12 +16,14 @@
 
 package org.codehaus.groovy.grails.plugins.jasper
 
+import net.sf.jasperreports.engine.export.HtmlExporter
+import net.sf.jasperreports.export.HtmlExporterConfiguration
+
 import java.lang.reflect.Field
 
 import net.sf.jasperreports.engine.JRExporter
 import net.sf.jasperreports.engine.export.JRCsvExporter
 import net.sf.jasperreports.engine.export.JRCsvExporterParameter
-import net.sf.jasperreports.engine.export.JRHtmlExporter
 import net.sf.jasperreports.engine.export.JRHtmlExporterParameter
 import net.sf.jasperreports.engine.export.JRPdfExporter
 import net.sf.jasperreports.engine.export.JRPdfExporterParameter
@@ -98,7 +100,7 @@ enum JasperExportFormat implements Serializable {
   static JRExporter getExporter(JasperExportFormat format) {
     switch (format) {
       case PDF_FORMAT:  return new JRPdfExporter()
-      case HTML_FORMAT: return new JRHtmlExporter()
+      case HTML_FORMAT: return new HtmlExporter()
       case XML_FORMAT:  return new JRXmlExporter()
       case CSV_FORMAT:  return new JRCsvExporter()
       case XLS_FORMAT:  return new JRXlsExporter()
@@ -121,7 +123,7 @@ enum JasperExportFormat implements Serializable {
   static Field[] getExporterFields(JasperExportFormat format) {
     switch (format) {
       case PDF_FORMAT:  return JRPdfExporterParameter.getFields()
-      case HTML_FORMAT: return JRHtmlExporterParameter.getFields()
+      case HTML_FORMAT: return HtmlExporterConfiguration.getBetweenPagesHtml().getFields()
       case XML_FORMAT:  return JRXmlExporterParameter.getFields()
       case CSV_FORMAT:  return JRCsvExporterParameter.getFields()
       case XLS_FORMAT:  return JRXlsExporterParameter.getFields()
